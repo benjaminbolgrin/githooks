@@ -15,7 +15,7 @@ totalBlankLines=0
 while read line
 do
 	# ignore commented lines
-	if [[ ! ${line} =~ [[:blank:]]*\#.* ]]; then
+	if [[ ! ${line} =~ ^[[:blank:]]*\#.* ]]; then
 		msgSize=$((${msgSize} + 1))
 		commitMsg[${lineCounter}]=${line}
 			
