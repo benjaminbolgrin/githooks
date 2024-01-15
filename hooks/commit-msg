@@ -28,10 +28,6 @@ do
 						break
 					fi
 				done
-				if [ ! ${descriptionMatch} == 0 ]; then
-					errorSum=$((${errorSum} + 1))
-					errors+=("Incorrect description")
-				fi
 
 			# check for blank line after description
 			elif [ ${lineCounter} == 2 ]; then
@@ -53,6 +49,12 @@ do
 		lineCounter=$((${lineCounter} + 1))
 	fi
 done < ${commitMsgPath}
+
+# verify description
+if [ ! ${descriptionMatch} == 0 ]; then
+	errorSum=$((${errorSum} + 1))
+	errors+=("Incorrect description")
+fi
 
 # validate total number of lines
 if [ ${lineCounter} == 3 ]; then
