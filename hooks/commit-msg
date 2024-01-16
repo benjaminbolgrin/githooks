@@ -80,9 +80,7 @@ if [ ! ${errorSum} == 0 ]; then
 	colorSTOP='\033[0m'
 	
 	echo -ne "${colorRED}Commit message declined!${colorSTOP}"
-	echo ""
 	echo "Your commit message does not comply to the Conventional Commits specification:"
-	echo ""
 	echo "<type>(optional scope)(optional !): <description>"
 	echo ""
 	echo "[optional body]"
@@ -94,7 +92,6 @@ if [ ! ${errorSum} == 0 ]; then
 	echo "${allowedTypes[@]}"
 	echo ""
 	echo "Your commit message:"
-	echo ""
 	lineCounter=0
 	for line in "${commitMsg[@]}"
 	do
@@ -103,8 +100,6 @@ if [ ! ${errorSum} == 0 ]; then
 	done
 	echo ""
 	echo "The following errors occured:"
-	echo ""
-	
 	for error in "${errors[@]}"
 	do
 		echo -ne "${colorRED}${error}${colorSTOP}"
