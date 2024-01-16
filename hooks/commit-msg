@@ -89,6 +89,9 @@ if [ ! ${errorSum} == 0 ]; then
 	echo ""
 	echo "[optional footers]"
 	echo ""
+	# list description types
+	echo "Valid description types:"
+	echo "${allowedTypes[@]}"
 	echo ""
 	echo "Your commit message:"
 	echo ""
