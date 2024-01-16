@@ -80,6 +80,7 @@ if [ ! ${errorSum} == 0 ]; then
 	colorSTOP='\033[0m'
 	
 	echo -ne "${colorRED}Commit message declined!${colorSTOP}"
+	echo ""
 	echo "Your commit message does not comply to the Conventional Commits specification:"
 	echo "<type>(optional scope)(optional !): <description>"
 	echo ""
