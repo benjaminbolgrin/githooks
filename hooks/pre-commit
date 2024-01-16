@@ -1,0 +1,19 @@
+#! /bin/bash
+
+protectedBranches=("master" "main")
+currentBranch=$(git branch --show-current)
+
+for branch in "${protectedBranches[@]}"
+do
+	if [ ${branch} == ${currentBranch} ]; then
+		#decline commit
+		colorRED='\033[31m'
+		colorSTOP='\033[0m'
+		echo "${colorRED}Commit declined${colorSTOP}"
+		echo "You are on protected branch ${currentBranch}."
+		exit 1
+	fi
+done
+
+# proceed commit
+exit 0
