@@ -3,6 +3,9 @@
 ## commit-msg
 Validate commit message against Conventional Commits specification.
 
+## pre-commit
+Protect branches main and master from commits.
+
 ## Set up
 Copy hooks to your project's '.git/hooks' directory.
 
