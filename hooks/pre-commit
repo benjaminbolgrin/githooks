@@ -10,6 +10,7 @@ do
 		colorRED='\033[31m'
 		colorSTOP='\033[0m'
 		echo "${colorRED}Commit declined${colorSTOP}"
+		echo ""
 		echo "You are on protected branch ${currentBranch}."
 		exit 1
 	fi
